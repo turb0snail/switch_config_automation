@@ -1,4 +1,4 @@
-###Switch Config Automation
+#Switch Config Automation
 
 Switch Configuration Automation assists in automating the configuration process of network switches.
 Description
