@@ -52,9 +52,9 @@ def display_banner():
 # Display a banner message
    banner = """
 *****************************************************
-*                    AVICOM                         *                 
-*                                                   *
+*                                                   *                 
 *     HP ARUBA Switch 6000 R8N89A Configuration     *
+*                                                   *
 *                                                   *
 *****************************************************
 """
