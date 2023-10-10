@@ -52,7 +52,7 @@ def display_banner():
 # Display a banner message
    banner = """
 *****************************************************
-*                    AVICOM                         *                 
+*                                                   *                 
 *                                                   *
 *  Huawei Switch S5735-L8P4X-QA-V2 Configuration    *
 *                                                   *
@@ -106,8 +106,8 @@ def configure_switch():
 
         # Configure VLAN interface
         # vlan_interface = input("VLAN interface nömrəsini qeyd et:")
-        vlan_ip = input("VLAN interface İP-sini qeyd et (X.X.X.X): ")
-        subnet_mask = input("Subnet Maskı qeyd et (X.X.X.X): ")
+        vlan_ip = input("Enter VLAN IP (X.X.X.X): ")
+        subnet_mask = input("Enter subnet mask (X.X.X.X): ")
         send_command(switch, f"interface Vlanif{vlan_number}")
         send_command(switch, f"ip address {vlan_ip} {subnet_mask}")
         send_command(switch, "quit")
