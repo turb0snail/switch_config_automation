@@ -52,7 +52,7 @@ def display_banner():
 # Display a banner message
    banner = """
 *****************************************************
-*                    AVICOM                         *                 
+*                                                   *                 
 *                                                   *
 *     HP ARUBA Switch 6000 R8N89A Configuration     *
 *                                                   *
@@ -119,14 +119,14 @@ def configure_switch():
 
         # Configure VLAN interface
         # vlan_interface = input("VLAN interface nömrəsini qeyd et:")
-        vlan_ip = input("VLAN interface İP-sini qeyd et (X.X.X.X): ")
-        subnet_mask = input("Subnet Maskı qeyd et (X.X.X.X): ")
+        vlan_ip = input("Enter Vlan IP  (X.X.X.X): ")
+        subnet_mask = input("Enter the subnet mask (X.X.X.X): ")
         send_command(switch, f"interface vlan {vlan_number}")
         send_command(switch, f"ip address {vlan_ip} {subnet_mask}")
         send_command(switch, "exit")
 
         # Configure default route
-        default_route = input("Enter default route (e.g., 0.0.0.0 0.0.0.0 10.205.46.254):")
+        default_route = input("Enter default route (e.g., 0.0.0.0 0.0.0.0 x.x.x.x):")
         send_command(switch, f"ip route {default_route}")
         
         
