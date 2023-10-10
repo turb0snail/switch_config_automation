@@ -52,9 +52,9 @@ def display_banner():
 # Display a banner message
    banner = """
 *****************************************************
-*                    AVICOM                         *                 
+*                                                   *                 
+*   Huawei Switch S5735-L8P4X-QA-V2 Configuration   *
 *                                                   *
-*  Huawei Switch S5735-L8P4X-QA-V2 Configuration    *
 *                                                   *
 *****************************************************
 """
@@ -98,16 +98,16 @@ def configure_switch():
         send_command(switch, "telnet server enable")
         send_command(switch, "stelnet server enable")
         send_command(switch, "aaa")
-        send_command(switch, f"local-user miaadmin password irreversible-cipher Admin12345@")
+        send_command(switch, f"local-user miaadmin password irreversible-cipher xxxx")
         send_command(switch, "local-user miaadmin privilege level 3")
         send_command(switch, "y")
         send_command(switch, "local-user miaadmin service-type telnet terminal ssh")
         send_command(switch, "quit")
 
         # Configure VLAN interface
-        # vlan_interface = input("VLAN interface nömrəsini qeyd et:")
-        vlan_ip = input("VLAN interface İP-sini qeyd et (X.X.X.X): ")
-        subnet_mask = input("Subnet Maskı qeyd et (X.X.X.X): ")
+        # vlan_interface = input("Enter VLAN interface:")
+        vlan_ip = input("Enter VLAN interface IP (X.X.X.X): ")
+        subnet_mask = input("Enter Subnet Mask (X.X.X.X): ")
         send_command(switch, f"interface Vlanif{vlan_number}")
         send_command(switch, f"ip address {vlan_ip} {subnet_mask}")
         send_command(switch, "quit")
@@ -126,7 +126,7 @@ def configure_switch():
         send_command(switch, "quit")
 
         # Configure default route
-        default_route = input("Enter default route (e.g., 0.0.0.0 0.0.0.0 10.205.46.254):")
+        default_route = input("Enter default route (e.g., 0.0.0.0 0.0.0.0 x.x.x.x):")
         send_command(switch, f"ip route-static {default_route}")
 
         # Configure SSH settings
